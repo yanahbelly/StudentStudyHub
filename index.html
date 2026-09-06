@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentStudyHub | Your Study Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>📚 StudentStudyHub</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#resources" class="nav-link">Resources</a></li>
+                <li><a href="#notes" class="nav-link">Notes</a></li>
+                <li><a href="#schedule" class="nav-link">Schedule</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+        <div class="hero-container">
+            <h2>Welcome to StudentStudyHub!</h2>
+            <p>Your all-in-one browser-based study companion — organize resources, take notes, and manage your schedule all in one place.</p>
+            <a href="#resources" class="btn btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Study Resources Section -->
+    <section id="resources" class="section">
+        <div class="container">
+            <h2 class="section-title">📖 Study Resources</h2>
+            <p class="section-subtitle">Curated materials to help you succeed</p>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>📚 Academic Notes</h3>
+                    <p>Access compiled lecture notes, reviewers, and study guides.</p>
+                    <a href="#" class="card-link">Browse →</a>
+                </div>
+                <div class="resource-card">
+                    <h3>📝 Practice Tests</h3>
+                    <p>Test your knowledge with quizzes and practice exams.</p>
+                    <a href="#" class="card-link">Start Quiz →</a>
+                </div>
+                <div class="resource-card">
+                    <h3>🔗 Useful Links</h3>
+                    <p>Educational websites, references, and research tools.</p>
+                    <a href="#" class="card-link">Visit →</a>
+                </div>
+                <div class="resource-card">
+                    <h3>📂 File Repository</h3>
+                    <p>Downloadable PDFs, templates, and study documents.</p>
+                    <a href="#" class="card-link">Download →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notes Section -->
+    <section id="notes" class="section section-light">
+        <div class="container">
+            <h2 class="section-title">📝 Quick Notes</h2>
+            <p class="section-subtitle">Your notes are saved automatically</p>
+            
+            <div class="notes-container">
+                <textarea id="note-input" placeholder="Write your note here..."></textarea>
+                <button id="save-note" class="btn btn-primary">Save Note</button>
+                
+                <div class="notes-list">
+                    <h3>Your Notes</h3>
+                    <ul id="notes-display"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="section">
+        <div class="container">
+            <h2 class="section-title">📅 Weekly Study Schedule</h2>
+            <p class="section-subtitle">Plan your study sessions</p>
+            
+            <div class="schedule-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Subject / Activity</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>Review Lectures + Reading</td>
+                            <td>6:00 PM - 8:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Tuesday</td>
+                            <td>Problem Solving / Practice</td>
+                            <td>6:00 PM - 8:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>Group Study & Discussion</td>
+                            <td>5:00 PM - 7:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Thursday</td>
+                            <td>Deep Dive & Research</td>
+                            <td>6:00 PM - 8:30 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>Review Week's Topics</td>
+                            <td>4:00 PM - 6:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>Project Work / Advance Reading</td>
+                            <td>9:00 AM - 12:00 PM</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Rest & Light Prep</td>
+                            <td>—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section section-light">
+        <div class="container">
+            <h2 class="section-title">👥 Our Team</h2>
+            <p class="section-subtitle">The developers behind StudentStudyHub</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <h3>Alyanah Belle Bacunawa</h3>
+                    <span class="role">Project Lead & System Architect</span>
+                    <p>@yanahbelly</p>
+                </div>
+                <div class="team-card">
+                    <h3>John Anthony Pepito</h3>
+                    <span class="role">Frontend & UI/UX Developer</span>
+                    <p>@Mr-Whiteman941</p>
+                </div>
+                <div class="team-card">
+                    <h3>Sandra Mae Consolacion</h3>
+                    <span class="role">Backend & Database Developer</span>
+                    <p>@LolaAndang</p>
+                </div>
+                <div class="team-card">
+                    <h3>Ivelyn Caburnay</h3>
+                    <span class="role">Q&A, Documentation & Content Manager</span>
+                    <p>@IvelynCaburnay</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>📚 StudentStudyHub — A Browser-Based Study Companion</p>
+            <p>&copy; 2026 Team StudentStudyHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
