@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - StudentStudyHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        if (localStorage.getItem('studyhub_user')) {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body class="auth-page">
+    <nav class="navbar">
+        <div class="logo">StudentStudyHub</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="ai-chat.html">AI Assistant</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html" class="active">Sign Up</a>
+        </div>
+    </nav>
+
+    <main class="auth-container">
+        <div class="auth-card compact-card">
+            <h2>✨ Create Account</h2>
+            <p class="auth-subtitle">Join StudentStudyHub!</p>
+
+            <form id="signupForm">
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="newUsername" placeholder="Choose username" required>
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <div class="password-wrapper">
+            <input type="password" id="newPassword" placeholder="Create password" required>
+            <button type="button" class="toggle-password" id="toggleSignupPass">👁️</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Confirm Password</label>
+        <div class="password-wrapper">
+            <input type="password" id="confirmPassword" placeholder="Repeat password" required>
+            <button type="button" class="toggle-password" id="toggleConfirmPass">👁️</button>
+        </div>
+    </div>
+
+    <p id="signupError" class="error-msg"></p>
+    <button type="submit" class="btn-primary full-width">Sign Up</button>
+    
+    <p class="auth-switch">
+        Already have an account? <a href="login.html">Sign In →</a>
+    </p>
+</form>
+        </div>
+    </main>
+
+    <!-- ✅ SCRIPT DIRECTLY IN PAGE — NO SEPARATE FILE ISSUES -->
+    <script>
+// ===== PASSWORD TOGGLE =====
+function setupPasswordToggle(btnId, inputId) {
+    const btn = document.getElementById(btnId);
+    const input = document.getElementById(inputId);
+    if (!btn || !input) return;
+    
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const isHidden = input.type === 'password';
+        input.type = isHidden ? 'text' : 'password';
+        btn.textContent = isHidden ? '🙈' : '👁️';
+    });
+}
+setupPasswordToggle('toggleSignupPass', 'newPassword');
+setupPasswordToggle('toggleConfirmPass', 'confirmPassword');
+
+// ===== SIGN UP FORM & REDIRECT =====
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const u = document.getElementById('newUsername').value.trim();
+    const p = document.getElementById('newPassword').value;
+    const c = document.getElementById('confirmPassword').value;
+    const err = document.getElementById('signupError');
+
+    // Validation
+    if (!u || !p || !c) {
+        err.textContent = '⚠️ Fill all fields';
+        return;
+    }
+    if (u.length < 3) {
+        err.textContent = '⚠️ Username min 3 characters';
+        return;
+    }
+    if (p.length < 4) {
+        err.textContent = '⚠️ Password min 4 characters';
+        return;
+    }
+    if (p !== c) {
+        err.textContent = '⚠️ Passwords do not match';
+        return;
+    }
+
+    // Save account
+    let users = JSON.parse(localStorage.getItem('studyhub_users') || '{}');
+    if (users[u]) {
+        err.textContent = '⚠️ Username already taken';
+        return;
+    }
+    users[u] = p;
+    localStorage.setItem('studyhub_users', JSON.stringify(users));
+    
+    // Clear session — NOT logged in yet
+    localStorage.removeItem('studyhub_user');
+
+    // ✅ REDIRECT — INSTANT & UNSTOPPABLE
+    alert('✅ Account created! Going to Sign In...');
+    
+    // Multiple methods to guarantee it works
+    window.location.href = 'login.html';
+    window.location.replace('login.html');
+});
+</script>
+</body>
+</html>

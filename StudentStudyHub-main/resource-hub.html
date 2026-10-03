@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Hub - StudentStudyHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+    // Redirect to Login if NOT logged in
+    if (!localStorage.getItem('studyhub_user')) {
+        window.location.href = 'login.html';
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">StudentStudyHub</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="ai-chat.html">AI Assistant</a>
+            <a href="resource-hub.html" class="active">Resource Hub</a>
+            <a href="#" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <div class="welcome-section">
+            <h1>📁 Resource Hub</h1>
+            <p class="subtitle">Share and access notes, reviewers, and study materials from fellow students.</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Upload Section -->
+            <div class="card">
+                <h3>Upload Material</h3>
+                <div class="upload-form">
+                    <div class="form-group">
+                        <label for="fileUpload">Choose File</label>
+                        <input type="file" id="fileUpload" accept=".pdf,.doc,.docx,.txt,.jpg,.png">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceTitle">Title / Subject</label>
+                        <input type="text" id="resourceTitle" placeholder="e.g. Math Notes">
+                    </div>
+
+                    <button id="uploadBtn" class="btn-primary">Upload</button>
+                </div>
+            </div>
+
+            <!-- Available Materials -->
+            <div class="card">
+                <h3>Available Materials</h3>
+                <div id="resourcesContainer">
+                    <p class="empty-state">No resources yet. Be the first to share! 💙</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/resource-hub.js"></script>
+</body>
+</html>

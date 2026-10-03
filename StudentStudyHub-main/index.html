@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentStudyHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Protection: Must be logged in -->
+    <script>
+        if (!localStorage.getItem('studyhub_user')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">StudentStudyHub</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="ai-chat.html">AI Assistant</a>
+            <a href="resource-hub.html">Resource Hub</a>
+            <a href="#" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <div class="hero-section">
+            <h1>Welcome to StudentStudyHub 🎓</h1>
+            <p class="hero-subtitle">Your all-in-one student platform with built-in AI — get instant help, organize your studies, and excel in your classes!</p>
+            <a href="login.html" class="btn-primary" style="display: inline-block; padding: 14px 32px; font-size: 18px; text-decoration: none; border-radius: 10px; margin-top: 20px;">
+                Get Started →
+            </a>
+        </div>
+
+        <div class="features-grid">
+            <a href="ai-chat.html" class="feature-card">
+                <span class="feature-icon">🤖</span>
+                <h3>AI Study Assistant</h3>
+                <p>Ask any question — get explanations, writing help, study plans, and more instantly.</p>
+            </a>
+            <a href="resource-hub.html" class="feature-card">
+                <span class="feature-icon">📁</span>
+                <h3>Resource Hub</h3>
+                <p>Share and access notes, reviewers, and materials from fellow students.</p>
+            </a>
+            <a href="dashboard.html" class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h3>Smart Dashboard</h3>
+                <p>Track your progress, organize tasks, and manage your academic journey easily.</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>StudentStudyHub — Your Smart Study Partner 💖✨</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

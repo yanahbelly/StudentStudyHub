@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - StudentStudyHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+    // Redirect to Login if NOT logged in
+    if (!localStorage.getItem('studyhub_user')) {
+        window.location.href = 'login.html';
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">StudentStudyHub</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="ai-chat.html" class="active">AI Assistant</a>
+            <a href="resource-hub.html">Resource Hub</a>
+            <a href="#" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+
+    <main class="chat-page">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h2>🤖 AI Study Assistant</h2>
+                <p>Ask me anything — lessons, homework, essay ideas, study tips... I'm here to help!</p>
+            </div>
+
+            <div id="chatMessages" class="chat-messages">
+                <div class="message bot-message">
+                    <span class="message-icon">🤖</span>
+                    <div class="message-content">
+                        Hi there! 💡 I'm your AI study assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="questionInput" placeholder="Type your question here..." autocomplete="off">
+                <button id="sendBtn" class="btn-primary">Send</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
