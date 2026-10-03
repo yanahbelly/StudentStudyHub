@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - StudentStudyHub</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+    // Redirect to Login if NOT logged in
+    if (!localStorage.getItem('studyhub_user')) {
+        window.location.href = 'login.html';
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">StudentStudyHub</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="ai-chat.html">AI Assistant</a>
+            <a href="resource-hub.html">Resource Hub</a>
+            <a href="#" id="logoutLink">Logout</a>
+        </div>
+    </nav>
+
+    <main class="page-container">
+        <div class="welcome-section">
+            <h1>👋 Welcome, <span id="userName">Student</span>!</h1>
+            <p class="subtitle">Here's your study overview</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Tasks Card -->
+            <div class="card">
+                <h3>📋 My Tasks</h3>
+                <div class="task-input-row">
+                    <input type="text" id="newTask" placeholder="Add a new task...">
+                    <button id="addTaskBtn" class="btn-primary">Add</button>
+                </div>
+                <ul id="taskList" class="task-list"></ul>
+            </div>
+
+            <!-- Progress Card -->
+            <div class="card">
+                <h3>📊 Progress</h3>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <span class="stat-num" id="completedCount">0</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num" id="totalCount">0</span>
+                        <span class="stat-label">Total Tasks</span>
+                    </div>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar-bg">
+                        <div id="progressFill" class="progress-bar-fill"></div>
+                    </div>
+                    <p class="progress-text" id="progressPercent">0%</p>
+                </div>
+            </div>
+
+            <!-- Quick Links Card -->
+            <div class="card">
+                <h3>🔗 Quick Access</h3>
+                <div class="quick-links">
+                    <a href="ai-chat.html" class="quick-link-card">
+                        <span class="link-icon">💬</span>
+                        <span>Ask AI Assistant</span>
+                    </a>
+                    <a href="resource-hub.html" class="quick-link-card">
+                        <span class="link-icon">📁</span>
+                        <span>Browse Resources</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
